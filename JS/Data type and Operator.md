@@ -149,7 +149,7 @@
 
 ### 배열
 > 크기를 지정하지 않아도 되며, 어떤 위치에 어느 타입의 데이터를 저장하더라도 에러가 발생하지 않는다.
-
+> 동적 생성, 열거 및 delete 연산자를 이용한 프로퍼티 삭제가 가능하다.
 - 배열 생성
 ```javascript   
    var ColorArr = ['red', 'yellow', 'green', 'blue'];
@@ -162,3 +162,28 @@
    EmptyArr[3] = 'hello';
    console.log(EmptyArr); // [1, undefined, undefined, hello]
 ```
+
+- 배열의 length 프로퍼티와 push 메서드
+> length 프로퍼티는 배열 내에 가장 큰 인덱스에 1을 더한 값이고 `.length`를 통해서 명시적으로 값을 변경 가능하다. 또한  `.push()` 메서드는 배열의 현재 length 값의 위치에 새로운 원소값을 추가한다.
+```javascript   
+   var arr = ['blue', 'yellow', 'green'];
+   console.log(arr.length); // 3
+   arr.length =5;
+   console.log(arr); // [blue, yellow, green, undefined * 2]
+   arr.push('white');
+   console.log(arr); // [blue, yellow, green undefined * 2, white]
+```
+- `splice()` 메서드
+> delete 연산자는 해당 요소의 값을 undifined로 설정할 뿐 원소 자체는 삭제하지 않는다. 그렇기 떄문에 완전히 삭제를 원할 경우 splice() 배열 메서드를 사용한다.
+```javascript   
+   var arr = ['blue', 'yellow', 'green', 'white'];
+   arr.splice(2,1);
+   console.log(arr); // ["blue","yellow","green"]
+   console.log(arr.length); // 3
+
+```
+- 배열 VS 객체
+|                |배열                           |객체                         |
+|----------------|-------------------------------|----------------------------|
+|length 프로퍼티 존재여부|존재함			       |존재안함                     |
+|typeof 연산자    |object                         |object                      |
