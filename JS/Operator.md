@@ -10,13 +10,13 @@
  > === 연산자는 타입이 다를 경우 변환을 하지 않고 비교한다.
  
  ```javascript     
-	console.log(1 == '1'); // true
-	console.log(1 === '1'); // false
+console.log(1 == '1'); // true
+console.log(1 === '1'); // false
 ```
 
  ### !! 연산자
  > 피연산자를 불린값으로 변환하는 연산자이다.
  ```javascript     
-	console.log(!!0); // false
-	console.log(!!1); // true
+console.log(!!0); // false
+console.log(!!1); // true
 ```
