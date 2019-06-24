@@ -1,2 +1,2 @@
 # Study
-What I learned today.
+What I learned about JavaScript daily.
